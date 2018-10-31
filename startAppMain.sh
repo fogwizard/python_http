@@ -1,4 +1,4 @@
-ln -s /var/www/html ./releases
+#ln -s /var/www/html ./releases
 while true; do
 python AppMain.py
 sleep 10
