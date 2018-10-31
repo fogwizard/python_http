@@ -26,10 +26,10 @@ def done_html():
 pass
 
 path=os.getcwd()
-list = os.listdir(path)
+list = os.listdir(path+'/releases')
 filenum = 0
 subfilenum = 0
-f1= open('./index.html','w')
+f1= open('./releases/index.html','w')
 init_html();
 
 for line in list:
