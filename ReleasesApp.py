@@ -27,10 +27,23 @@ def done_html():
 pass
 def file_extension(path):
 	return os.path.splitext(path)[1]
+pass
+def compare(x, y):
+	stat_x = os.stat(path + "/" + x)
+	stat_y = os.stat(path + "/" + y)
+	if stat_x.st_ctime > stat_y.st_ctime:
+		return -1
+	elif stat_x.st_ctime < stat_y.st_ctime:
+		return 1
+	else:
+		return 0
+pass
 
 path=os.getcwd()+'/releases'
 
 list = os.listdir(path)
+list.sort(compare)
+
 filenum = 0
 subfilenum = 0
 f1= open(path + '/index.html','w')
